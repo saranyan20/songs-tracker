@@ -8,10 +8,9 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan('combined'))
 
-app.get('/status', (req, res) => {
-    res.send({
-        message: 'Hello World'
-    })
+app.post('/register', (req, res) => {
+    const username = req.body.username;
+    res.send(`Hi ${username}, Welcome to song tracker!!`)
 })
 
 app.listen(process.env.PORT || 8081, () => {
